@@ -5,21 +5,21 @@
 class Rwarden < Formula
   desc "Unified Edge & L4 Protocol Security Suite CLI"
   homepage "https://routewarden.github.io"
-  version "5.0.0"
+  version "5.0.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/routewarden/cli/releases/download/v5.0.0/rwarden_5.0.0_darwin_amd64.tar.gz"
-      sha256 "ba0f84539d93e855378dab9621b088ea8da8c3a4001ec3697cfa580af16da559"
+      url "https://github.com/routewarden/cli/releases/download/v5.0.1/rwarden_5.0.1_darwin_amd64.tar.gz"
+      sha256 "34c10a8985badad2820cebb3b479909a6e2cbfb90fc5249ad51c1dfd4e1bea2d"
 
       define_method(:install) do
         bin.install "rwarden"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/routewarden/cli/releases/download/v5.0.0/rwarden_5.0.0_darwin_arm64.tar.gz"
-      sha256 "8887b3dd02055b864db9ee1420002fe56541e2322c8777c4fc152325532bab79"
+      url "https://github.com/routewarden/cli/releases/download/v5.0.1/rwarden_5.0.1_darwin_arm64.tar.gz"
+      sha256 "f7ca44502123cb88c35d5d892885fbb434521f20ffe89470b8ab240ee57bc6b3"
 
       define_method(:install) do
         bin.install "rwarden"
@@ -29,15 +29,15 @@ class Rwarden < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/routewarden/cli/releases/download/v5.0.0/rwarden_5.0.0_linux_amd64.tar.gz"
-      sha256 "8d805baa1555c8f11e6cc730b9e83b6c3c25f3ca40df2334bda6f49f215c242f"
+      url "https://github.com/routewarden/cli/releases/download/v5.0.1/rwarden_5.0.1_linux_amd64.tar.gz"
+      sha256 "b90616cde5f97115f7bafa06a89dadc3438dfaeaffaf6444949a8a2a39d0f4f4"
       define_method(:install) do
         bin.install "rwarden"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/routewarden/cli/releases/download/v5.0.0/rwarden_5.0.0_linux_arm64.tar.gz"
-      sha256 "a0a31af2b09490c929e3fb5434caa0205444cc84c6dab90cc3a2d8f27621ac58"
+      url "https://github.com/routewarden/cli/releases/download/v5.0.1/rwarden_5.0.1_linux_arm64.tar.gz"
+      sha256 "3b42532bcde7aacb25574300b4fbfda113add7efaf01a48f31bb0c9c4ebec7ef"
       define_method(:install) do
         bin.install "rwarden"
       end
