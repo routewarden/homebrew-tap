@@ -33,11 +33,19 @@ cask "rwarden" do
 
   binary "rwarden"
 
+  uninstall_preflight do
+    if File.exist?("#{HOMEBREW_PREFIX}/bin/rwarden")
+      system_command "#{HOMEBREW_PREFIX}/bin/rwarden", args: ["stop"], must_succeed: false
+      system_command "#{HOMEBREW_PREFIX}/bin/rwarden", args: ["cleanup"], must_succeed: false
+    end
+  end
+
   postflight do
     if OS.mac?
       system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/rwarden"]
     end
   end
 
-  # No zap stanza required
+  zap trash: "~/.routewarden"
 end
+
